@@ -1,0 +1,579 @@
+/* global reset and base setup */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.5;
+    color: #222222;
+    background-color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* main wrapper container with 1200px max width */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #222222;
+}
+
+/* reusable button styles */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.gold-btn {
+    background-color: #c78c06;
+    color: #222222;
+}
+
+.gold-btn:hover {
+    opacity: 0.9;
+}
+
+.dark-btn {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.dark-btn:hover {
+    background-color: #000000;
+}
+
+.blue-btn {
+    background-color: #195886;
+    color: #ffffff;
+}
+
+.blue-btn:hover {
+    background-color: #103b5c;
+}
+
+/* header stuff for mobile view */
+.site-header {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 0.75rem 0.75rem 0 0.75rem;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+    background-color: #c78c06;
+    padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo img {
+    height: 55px;
+}
+
+.site-navigation {
+    width: 100%;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.nav-item {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-link {
+    display: block;
+    color: #c78c06;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+}
+
+.nav-item.active .nav-link,
+.nav-link.active {
+    background-color: #c78c06;
+    color: #222222 !important;
+    font-weight: 700;
+    padding: 0.5rem 0 1.5rem 0;
+    margin-top: -1px;
+    /* blends right into the gold logo box */
+}
+
+.nav-link:hover {
+    opacity: 0.85;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.search-form input[type="search"] {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ffffff;
+    border-right: none;
+    background: #ffffff;
+    color: #222222;
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.search-btn {
+    background-color: #222222;
+    border: 1px solid #c78c06;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn img,
+.search-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: #c78c06;
+}
+
+/* big hero banner section */
+.hero-section {
+    background: url("../images/main-banner.jpg") center/cover no-repeat;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-box {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 3rem 0;
+}
+
+.hero-box .container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.hero-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    color: #ffffff;
+    max-width: 650px;
+}
+
+/* about us section */
+.about-section {
+    background-color: #ffe6ac;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-content p {
+    color: #222222;
+    margin-bottom: 1rem;
+}
+
+/* services grid section */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: #ffe6ac;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1rem;
+}
+
+.card-body h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card-body p {
+    flex-grow: 1;
+}
+
+.card-body .cta-button {
+    align-self: flex-start;
+}
+
+/* vision statement section */
+.vision-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/vision.jpg") center/cover no-repeat;
+    color: #ffffff;
+    padding: 3.5rem 0;
+}
+
+.vision-box {
+    max-width: 800px;
+}
+
+.vision-box h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.vision-box p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* team section */
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.team-card {
+    background-color: #ffe6ac;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.team-card-body {
+    padding: 1.5rem;
+}
+
+.team-card-body h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.team-card-body .role {
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid #222222;
+    padding-bottom: 0.25rem;
+}
+
+/* contact form and info */
+.contact-top-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-top-grid h3,
+.location-wrapper h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-form label {
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #222222;
+    border-radius: 0;
+    color: #222222;
+    font-family: inherit;
+}
+
+.submit-button {
+    background-color: #222222;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.submit-button:hover {
+    background-color: #000000;
+}
+
+.hours-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #222222;
+}
+
+.hours-wrapper th,
+.hours-wrapper td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #222222;
+}
+
+.hours-wrapper th {
+    background-color: #ffe6ac;
+}
+
+/* footer area */
+.site-footer {
+    background-color: #222222;
+    color: #c78c06;
+    padding: 2rem 0;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.site-footer a {
+    color: #c78c06;
+    text-decoration: underline;
+}
+
+/* desktop styles for screens 760px and wider */
+@media screen and (min-width: 760px) {
+
+    /* desktop header layout */
+    .site-header {
+        background-color: #222222;
+        padding: 1rem 1rem 0 1rem;
+    }
+
+    .header-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        background-color: #222222;
+    }
+
+    /* logo square box */
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #c78c06;
+        width: 120px;
+        height: 80px;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+        list-style: none;
+    }
+
+    .nav-link {
+        color: #ffe6ac;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-item.active .nav-link,
+    .nav-link.active {
+        background-color: #c78c06;
+        color: #222222 !important;
+        font-weight: 700;
+        display: inline-block;
+        padding: 0.75rem 1.75rem;
+    }
+
+    .search-form {
+        width: auto;
+        margin: 0;
+    }
+
+    /* desktop about us side-by-side */
+    .about-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .about-media,
+    .about-content {
+        flex: 1;
+    }
+
+    /* desktop services multi-column grid */
+    .services-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .service-card:nth-child(1),
+    .service-card:nth-child(2) {
+        grid-column: span 3;
+    }
+
+    .service-card:nth-child(3),
+    .service-card:nth-child(4),
+    .service-card:nth-child(5) {
+        grid-column: span 2;
+    }
+
+    /* desktop team grid layout */
+    .team-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: dense;
+        gap: 0;
+        width: 100%;
+    }
+
+    .team-card {
+        display: contents;
+    }
+
+    /* john doe card order */
+    .team-card:not(.reverse) img {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .team-card:not(.reverse) .team-card-body {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* jane doe card reversed order */
+    .team-card.reverse .team-card-body {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .team-card.reverse img {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .team-card img {
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .team-card-body {
+        background-color: #ffe6ac;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .team-card-body h3 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #222222;
+        margin-bottom: 0.25rem;
+    }
+
+    .team-card-body .role {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #222222;
+        border-bottom: 2px solid #c78c06;
+        padding-bottom: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .team-card-body p:not(.role) {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #222222;
+    }
+}
